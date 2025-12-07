@@ -1,0 +1,19 @@
+# Ignore virtual environments
+.venv/
+venv/
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore IDE configs (PyCharm)
+.idea/
+
+# Ignore raw data (these can be regenerated)
+UK_national_polls_raw.csv
+
+# (Optional) ignore clean data, if you want pipeline to always regenerate it
+# Uk_polls_clean.csv
+
+# Ignore dashboard output (it is built by the script)
+dashboard/
