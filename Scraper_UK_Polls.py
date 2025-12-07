@@ -15,12 +15,14 @@ headers = {
 
 
 def Scraper_UK():
-    # ---- 1. Download page ----
+    #Scraping function that takes only the Tables we need (done according to the structure of the
+    # wikipedia page for UK Poll
+    # 1: The page is loaded with request and parsed with BeautifulSoup
     resp = requests.get(URL, headers=headers)
     resp.raise_for_status()
     soup = BeautifulSoup(resp.text, "lxml")
 
-    # ---- 2. Find national poll tables ----
+    # Find all national tables
     all_tables = soup.find_all("table", class_="wikitable")
 
     national_tables = []
@@ -35,14 +37,14 @@ def Scraper_UK():
 
         header_joined = " ".join(header_cells)
 
-        # National poll tables have Pollster + Area + Lead
+        # Find National poll tables that have Pollster + Area + Lead
         if "Pollster" in header_joined and "Area" in header_joined and "Lead" in header_joined:
             national_tables.append(table)
-
+     #error raised if no table found
     if not national_tables:
         raise RuntimeError("No national poll tables found.")
 
-    # ---- 3. Collect all rows with year from data-sort-value ----
+    # Collect all rows with year from data-sort-value
     all_rows = []          # list of (year_int, [cell_texts])
     header = None
     area_idx = None
@@ -81,7 +83,7 @@ def Scraper_UK():
 
             cells_text = [td.get_text(" ", strip=True) for td in tds]
 
-            # crude filter to avoid some weird header/footnote rows
+
             date_text = cells_text[0]
             if not date_text or not date_text[-1].isalpha():
                 continue
@@ -106,13 +108,13 @@ def Scraper_UK():
     if not all_rows:
         raise RuntimeError("No data rows with data-sort-value year found after filtering.")
 
-    # ---- 4. Keep only last 5 distinct years ----
+    # Keep only last 5 distinct years (as National Elections are held every 5 years max)
     years_found = sorted({y for y, _ in all_rows}, reverse=True)
     keep_years = set(years_found[:5])
 
     filtered_rows = [(y, cells) for (y, cells) in all_rows if y in keep_years]
 
-    # ---- 5. Write CSV ----
+    # Write CSV
     with open(RAW_OUTPUT, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f)
         writer.writerow(["Year"] + header)
@@ -127,6 +129,6 @@ def Scraper_UK():
 def main():
     Scraper_UK()
 
-
+#this is always important so that the python file only runs when we want it to run
 if __name__ == "__main__":
     main()
