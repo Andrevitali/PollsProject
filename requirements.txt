@@ -3,3 +3,4 @@ altair
 requests
 beautifulsoup4
 vega_datasets
+lxml
