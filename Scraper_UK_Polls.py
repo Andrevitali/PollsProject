@@ -123,7 +123,7 @@ def Scraper_UK():
 
     print("Years found in national tables:", years_found)
     print("Keeping years:", sorted(keep_years, reverse=True))
-    print(f"✅ Saved {len(filtered_rows)} rows to {OUTPUT_FILE}")
+    print(f"✅ Saved {len(filtered_rows)} rows to {RAW_OUTPUT}")
 
 
 def main():
