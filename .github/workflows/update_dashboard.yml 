@@ -1,4 +1,4 @@
-name: Update UK Polls Dashboard
+name: Update UK Polls Dashboard (Test)
 
 on:
   schedule:
