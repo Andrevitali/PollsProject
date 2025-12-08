@@ -1,7 +1,7 @@
 Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025,3 Dec,Find Out Now [ 2 ],N/A,GB,"2,591",14%,20%,31%,11%,18%,3%,1%,3%,11
 2025,30 Nov – 1 Dec,YouGov [ 3 ],N/A,GB,"2,366",19%,19%,26%,14%,16%,3%,1%,2%,7
-2025,29 Nov – 1 Dec,J.L. Partners [ 4 ] [ a ],The Sun,GB,"1,500",22%,20%,29%,11%,9%,TBC,TBC,TBC,7
+2025,29 Nov – 1 Dec,JL Partners [ 4 ] [ a ],The Sun,GB,"1,500",22%,20%,29%,11%,9%,TBC,TBC,TBC,7
 2025,28 Nov – 1 Dec,More in Common [ 5 ],N/A,GB,"2,114",21%,21%,30%,13%,11%,2%,1%,1%,9
 2025,28– 30 Nov,Freshwater Strategy [ 6 ],City AM,GB,"1,558",19%,20%,31%,15%,12%,2%,–,2%,11
 2025,26– 28 Nov,Focaldata [ 7 ],N/A,GB,"1,343",20%,18%,29%,13%,12%,3%,1%,3%,9
@@ -26,7 +26,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,30 Oct – 5 Nov,Ipsos [ 26 ],N/A,GB,"1,148",18%,16%,33%,12%,15%,4%,1%,1%,15
 2025,2– 3 Nov,YouGov [ 27 ],The Times/Sky News,GB,"2,376",20%,16%,27%,15%,16%,3%,1%,2%,7
 2025,31 Oct – 3 Nov,More in Common [ 28 ],N/A,GB,"2,031",18%,19%,31%,13%,12%,2%,1%,3%,12
-2025,31 Oct – 2 Nov,J.L. Partners [ 29 ] [ a ],The Sun,GB,"1,505",23%,18%,30%,11%,10%,3%,1%,4%,7
+2025,31 Oct – 2 Nov,JL Partners [ 29 ] [ a ],The Sun,GB,"1,505",23%,18%,30%,11%,10%,3%,1%,4%,7
 2025,29 Oct,Find Out Now [ 30 ],N/A,GB,"3,065",16%,16%,32%,12%,17%,2%,1%,3%,15
 2025,26– 27 Oct,YouGov [ 31 ],The Times/Sky News,GB,"2,389",17%,17%,27%,15%,16%,3%,1%,3%,10
 2025,24– 27 Oct,More in Common [ 32 ],N/A,GB,"2,030",21%,18%,33%,12%,11%,2%,1%,1%,12
@@ -45,7 +45,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,3– 6 Oct,More in Common [ 46 ],N/A,GB,"2,003",20%,19%,33%,14%,8%,3%,1%,3%,13
 2025,3– 5 Oct,Freshwater Strategy [ 47 ],City AM,GB,"1,251",20%,18%,35%,14%,8%,3%,–,2%,15
 2025,1– 3 Oct,Opinium [ 48 ],The Observer,GB,"2,050",21%,16%,34%,12%,10%,2%,1%,4%,13
-2025,26 Sep – 3 Oct,J.L. Partners [ 49 ] [ a ],N/A,GB,"6,083",21%,19%,31%,13%,9%,2%,1%,4%,10
+2025,26 Sep – 3 Oct,JL Partners [ 49 ] [ a ],N/A,GB,"6,083",21%,19%,31%,13%,9%,2%,1%,4%,10
 2025,1 Oct,Find Out Now [ 50 ],N/A,GB,"2,611",19%,14%,35%,12%,11%,3%,1%,4%,16
 2025,19 Sep – 1 Oct,Focaldata [ 51 ],N/A,GB,"2,014",21%,20%,29%,14%,10%,2%,1%,4%,8
 2025,28– 29 Sep,YouGov [ 52 ],The Times / Sky News,GB,"2,585",22%,16%,29%,15%,11%,3%,1%,3%,7
@@ -70,7 +70,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,31 Aug – 1 Sep,YouGov [ 77 ],The Times/Sky News,GB,"2,523",20%,17%,29%,15%,10%,3%,1%,5%,9
 2025,29 Aug – 1 Sep,More in Common [ 78 ],N/A,GB,"2,042",21%,18%,31%,13%,8%,3%,1%,6%,10
 2025,29– 31 Aug,Freshwater Strategy [ 81 ],City AM,GB,"1,251",20%,17%,33%,15%,7%,3%,–,4%,13
-2025,19– 31 Aug,J.L. Partners [ 82 ] [ a ],The Sun,GB,"2,118",22%,18%,32%,12%,6%,2%,1%,6%,10
+2025,19– 31 Aug,JL Partners [ 82 ] [ a ],The Sun,GB,"2,118",22%,18%,32%,12%,6%,2%,1%,6%,10
 2025,26– 28 Aug,BMG Research [ 83 ],The i Paper,GB,"1,504",20%,17%,35%,13%,7%,2%,1%,4%,15
 2025,27 Aug,Find Out Now [ 84 ],N/A,GB,"2,538",18%,15%,34%,13%,10%,2%,1%,6%,16
 2025,25– 26 Aug,YouGov [ 85 ],The Times/Sky News,GB,"2,439",20%,17%,28%,16%,11%,3%,1%,4%,8
@@ -97,7 +97,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,23 Jul,Find Out Now [ 106 ],N/A,GB,"2,651",20%,16%,34%,14%,10%,3%,1%,4%,14
 2025,20– 21 Jul,YouGov [ 107 ],The Times/Sky News,GB,"2,273",23%,17%,27%,15%,11%,3%,1%,3%,4
 2025,18– 20 Jul,More in Common [ 108 ],N/A,GB,"2,153",22%,21%,29%,15%,8%,2%,1%,2%,7
-2025,17– 18 Jul,J.L. Partners [ 109 ] [ a ],The Telegraph,GB,"2,035",23%,17%,29%,14%,9%,2%,1%,4%,6
+2025,17– 18 Jul,JL Partners [ 109 ] [ a ],The Telegraph,GB,"2,035",23%,17%,29%,14%,9%,2%,1%,4%,6
 2025,14– 18 Jul,Focaldata [ 110 ],N/A,GB,"1,271",23%,19%,27%,14%,9%,2%,1%,5%,4
 2025,16 Jul,Find Out Now [ 111 ],N/A,GB,"2,603",20%,17%,30%,13%,12%,2%,1%,4%,10
 2025,13– 14 Jul,YouGov [ 112 ],The Times/Sky News,GB,"2,209",22%,17%,28%,16%,12%,3%,1%,3%,6
@@ -190,7 +190,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,12 Mar,Find Out Now [ 219 ],N/A,GB,"2,686",24%,21%,27%,11%,10%,3%,1%,2%,3
 2025,9– 10 Mar,YouGov [ 220 ],The Times/Sky News,GB,"2,291",24%,22%,23%,15%,9%,3%,1%,3%,1
 2025,7– 10 Mar,More in Common [ 221 ],N/A,GB,"2,041",25%,23%,25%,14%,8%,2%,1%,2%,Tie
-2025,6– 9 Mar,J.L. Partners [ 222 ],The Sun,GB,"2,012",26%,24%,23%,14%,7%,3%,1%,3%,2
+2025,6– 9 Mar,JL Partners [ 222 ],The Sun,GB,"2,012",26%,24%,23%,14%,7%,3%,1%,3%,2
 2025,5– 7 Mar,Opinium [ 223 ],The Observer,GB,"1,498",28%,20%,27%,12%,8%,3%,1%,2%,1
 2025,5 Mar,Find Out Now [ 225 ],N/A,GB,"2,670",25%,21%,26%,12%,10%,3%,1%,2%,1
 2025,2– 3 Mar,YouGov [ 226 ],The Times,GB,"2,222",26%,21%,25%,14%,9%,3%,1%,2%,1
@@ -227,7 +227,7 @@ Year,Date(s) conducted,Pollster,Client,Area,Sample size,Lab,Con,Ref,LD,Grn,SNP,P
 2025,17– 20 Jan,Deltapoll [ 265 ],Institute for Government,GB,"1,500",29%,25%,22%,11%,8%,3%,–,2%,4
 2025,16– 20 Jan,Lord Ashcroft Polls [ 266 ] [ b ] [ a ],N/A,GB,"5,251",28%,25%,20%,11%,9%,3%,0%,3%,3
 2025,15 Jan,Find Out Now [ 268 ],N/A,GB,"2,386",24%,25%,25%,12%,10%,3%,1%,2%,Tie
-2025,10– 14 Jan,J.L. Partners [ 269 ],The Sunday Times,GB,"2,007",26%,25%,22%,13%,9%,2%,1%,3%,1
+2025,10– 14 Jan,JL Partners [ 269 ],The Sunday Times,GB,"2,007",26%,25%,22%,13%,9%,2%,1%,3%,1
 2025,12– 13 Jan,YouGov [ 270 ],The Times,GB,"2,279",26%,22%,25%,14%,8%,3%,1%,2%,1
 2025,10– 13 Jan,More in Common [ 271 ],N/A,GB,"1,587",24%,25%,24%,12%,8%,3%,1%,3%,1
 2025,8– 10 Jan,Opinium [ 272 ],The Observer,GB,"2,050",29%,23%,24%,10%,9%,2%,1%,2%,5
