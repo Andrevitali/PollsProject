@@ -76,7 +76,10 @@ def make_uk_map(df: pd.DataFrame) -> alt.Chart:
         .properties(
             width=700,
             height=400,
-            title="European Polls (highlighted by leading party in the last 10 polls)",
+            title={
+                "text": "European Polls (highlighted by leading party in the last 10 polls)",
+                "fontSize": 16
+            },
         )
     )
 
@@ -178,8 +181,9 @@ def make_chart(df: pd.DataFrame) -> alt.Chart:
             "subtitle": [
                 f"Updated on {today} - Last poll conducted on {last_date_str}"
             ],
+             "fontSize": 16,
              "subtitleColor": "white",
-             "subtitleFontSize": 11
+             "subtitleFontSize": 12
         }
     )
     #Custom legend as a separate chart
@@ -341,7 +345,7 @@ def make_latest_polls_table(df: pd.DataFrame) -> alt.Chart:
         .transform_filter(
             "indexof(['Date','Lead','Pollster'], datum.column) >= 0"
         )
-        .mark_text(align="center", dx=3, dy=3, fontSize=11)
+        .mark_text(align="center", dx=3, dy=3, fontSize=13)
         .encode(
             x=alt.X("column:N", title=None, sort=available_cols),
             y=alt.Y("row:O", axis=None),
@@ -371,7 +375,7 @@ def make_latest_polls_table(df: pd.DataFrame) -> alt.Chart:
     highlight = (
         alt.Chart(cell_df)
         .transform_filter("datum.column === datum.max_party")
-        .mark_text(align="center", dx=-3, dy=3, fontSize=13, fontWeight="bold")
+        .mark_text(align="center", dx=-3, dy=3, fontSize=14, fontWeight="bold")
         .encode(
             x=alt.X("column:N", title=None, sort=available_cols),
             y=alt.Y("row:O", axis=None),
@@ -384,7 +388,7 @@ def make_latest_polls_table(df: pd.DataFrame) -> alt.Chart:
     lead_highlight = (
         alt.Chart(cell_df)
         .transform_filter("datum.column === 'Lead'")
-        .mark_text(align="center", dx=3, dy=3, fontSize=13, fontWeight="bold")
+        .mark_text(align="center", dx=3, dy=3, fontSize=14, fontWeight="bold")
         .encode(
             x=alt.X("column:N", title=None, sort=available_cols),
             y=alt.Y("row:O", axis=None),
@@ -398,7 +402,12 @@ def make_latest_polls_table(df: pd.DataFrame) -> alt.Chart:
         .properties(
             width=1000,
             height=200,
-            title="Latest 10 polls (leading party highlighted)",
+            title={"text":"Latest 10 polls",
+                   "subtitle":"Leading party highlighted",
+                   "fontSize":16,
+                   "subtitleColor":"white",
+                   "subtitleFontSize":12
+    }
         )
     )
 
