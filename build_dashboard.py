@@ -1,6 +1,7 @@
 import os
 import pandas as pd
 import altair as alt
+from datetime import date
 from vega_datasets import data
 
 # Dark Theme
@@ -167,11 +168,12 @@ def make_chart(df: pd.DataFrame) -> alt.Chart:
 
     # Title with last updated date
     last_date_str = pd.to_datetime(df['Date_conducted']).max().strftime('%d %b %Y')
+    today=date.today().strftime('%d %b %Y')
 
     main_chart = (points + lines).properties(
         width=880,   # a bit wider so legend can sit close
         height=400,
-        title=f"UK Polling Trends (LOESS) (Updated on {last_date_str})"
+        title=f"UK Polling Trends (LOESS) - Updated on {today} - Last poll conducted on {last_date_str}"
     )
 
     #Custom legend as a separate chart
