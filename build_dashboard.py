@@ -77,8 +77,11 @@ def make_uk_map(df: pd.DataFrame) -> alt.Chart:
             width=700,
             height=400,
             title={
-                "text": "European Polls (highlighted by leading party in the last 10 polls)",
-                "fontSize": 16
+                "text": "European Political Trends",
+                "subtitle": "Countries highlighted by leading party in the last 10 polls",
+                "fontSize": 16,
+                "subtitleFontSize": 12,
+                "subtitleColor": "white",
             },
         )
     )
