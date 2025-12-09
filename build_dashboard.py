@@ -119,7 +119,7 @@ def make_chart(df: pd.DataFrame) -> alt.Chart:
     # Points layer
     points = (
         base
-        .mark_point(opacity=0.5, filled=True)
+        .mark_point(opacity=0.4, filled=True)
         .encode(
             x=alt.X(
                 'Date_conducted:T',
@@ -173,9 +173,15 @@ def make_chart(df: pd.DataFrame) -> alt.Chart:
     main_chart = (points + lines).properties(
         width=880,   # a bit wider so legend can sit close
         height=400,
-        title=f"UK Polling Trends (LOESS) - Updated on {today} - Last poll conducted on {last_date_str}"
+        title={
+            "text": "UK Polls and Trends (LOESS)",
+            "subtitle": [
+                f"Updated on {today} - Last poll conducted on {last_date_str}"
+            ],
+             "subtitleColor": "white",
+             "subtitleFontSize": 11
+        }
     )
-
     #Custom legend as a separate chart
     legend_order = ['Lab', 'Con', 'Ref', 'Grn', 'LD', 'SNP']
     legend_labels = {
