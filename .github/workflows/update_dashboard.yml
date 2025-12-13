@@ -24,8 +24,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run scraper
+      - name: Run UK scraper
         run: python Scraper_UK_Polls.py
+
+      - name: Run Italy scraper
+        run: python Scraper_Italy_Polls.py
+
+      - name: Run cleaning script
+        run: python Data_Clean_UK.py
 
       - name: Run cleaning script
         run: python Data_Clean_UK.py
