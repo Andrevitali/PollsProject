@@ -34,7 +34,7 @@ jobs:
         run: python Data_Clean_UK.py
 
       - name: Run cleaning script
-        run: python Data_Clean_UK.py
+        run: python Data_Clean_Italy.py
 
       - name: Build dashboard
         run: python build_dashboard.py
