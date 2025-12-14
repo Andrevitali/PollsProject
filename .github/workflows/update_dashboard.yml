@@ -33,6 +33,9 @@ jobs:
       - name: Run Germany scraper
         run: python Scraper_Germany_Polls.py
 
+      - name: Run Denmark scraper
+        run: python Scraper_Denmark_Polls.py
+
       - name: Run cleaning script
         run: python Data_Clean_UK.py
 
@@ -41,6 +44,9 @@ jobs:
 
       - name: Run cleaning script
         run: python Data_Clean_Germany.py
+
+      - name: Run cleaning script
+        run: python Data_Clean_Denmark.py
 
       - name: Build dashboard
         run: python build_dashboard.py

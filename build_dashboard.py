@@ -60,6 +60,19 @@ KNOWN_PARTY_COLORS = {
     "BSW": "#7A0019",
     "FDP": "#FFED00",
     "Others": "#BBBBBB",
+    #DK
+    "Social Democrats": "#E41E2B",
+    "Venstre (Liberal Party)": "#1E5AA8",
+    "The Moderates": "#7C3AED",
+    "Socialist People's Party": "#2E8B57",
+    "Denmark Democrats": "#7A0C2E",
+    "Liberal Alliance": "#00A3A3",
+    "Conservative People's Party": "#0B5D1E",
+    "Red–Green Alliance": "#C1121F",
+    "Social Liberal Party": "#B83280",
+    "The Alternative": "#6AB023",
+    "Danish People's Party": "#F2C300",
+    "Hard Line (Stram Kurs)": "#9A9A9A",
 }
 
 AUTO_PALETTE = [
@@ -582,15 +595,30 @@ def main():
     uk_wide = pd.read_csv("Uk_polls_clean.csv")
     it_wide = pd.read_csv("Italy_polls_clean.csv")
     de_wide = pd.read_csv("Germany_polls_clean.csv")
+    dk_wide = pd.read_csv("Denmark_polls_clean.csv")
 
     UK_PARTIES = ["Lab", "Con", "Ref", "Grn", "LD", "SNP"]
     IT_PARTIES = ["FdI", "PD", "M5S", "Lega", "FI", "A", "IV", "AVS", "+E", "NM"]
     DE_PARTIES = ["Union", "AfD", "SPD", "Grüne", "Linke", "BSW", "FDP", "Others"]
+    DK_PARTIES =[
+    "Social Democrats",
+    "Venstre (Liberal Party)",
+    "The Moderates",
+    "Socialist People's Party",
+    "Denmark Democrats",
+    "Liberal Alliance",
+    "Conservative People's Party",
+    "Red–Green Alliance",
+    "Social Liberal Party",
+    "The Alternative",
+    "Danish People's Party",
+    "Hard Line (Stram Kurs)"]
 
     uk_long = to_long_format(uk_wide, "United Kingdom", "826", UK_PARTIES)
     it_long = to_long_format(it_wide, "Italy", "380", IT_PARTIES)
     de_long = to_long_format(de_wide, "Germany", "276", DE_PARTIES)
-    df_long = pd.concat([uk_long, it_long, de_long], ignore_index=True)
+    dk_long = to_long_format(dk_wide, "Denmark", "208", DK_PARTIES)
+    df_long = pd.concat([uk_long, it_long, de_long, dk_long], ignore_index=True)
 
     # ---- Color map + map leading party ----
     all_parties = sorted(df_long["Party"].dropna().unique().tolist())
