@@ -216,7 +216,7 @@ def make_map(lead_df: pd.DataFrame, country_sel) -> alt.Chart:
             y=alt.value(40),
             text="text:N",
             color=alt.value("gold"),
-            opacity=alt.condition(country_sel, alt.value(0), alt.value(1)),
+
         )
     )
 
