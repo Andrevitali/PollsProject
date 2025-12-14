@@ -30,11 +30,17 @@ jobs:
       - name: Run Italy scraper
         run: python Scraper_Italy_Polls.py
 
+      - name: Run Germany scraper
+        run: python Scraper_Germany_Polls.py
+
       - name: Run cleaning script
         run: python Data_Clean_UK.py
 
       - name: Run cleaning script
         run: python Data_Clean_Italy.py
+
+      - name: Run cleaning script
+        run: python Data_Clean_Germany.py
 
       - name: Build dashboard
         run: python build_dashboard.py

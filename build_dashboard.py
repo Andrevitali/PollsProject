@@ -51,6 +51,15 @@ KNOWN_PARTY_COLORS = {
     "AVS": "darkred",
     "+E":  "#9AD0F5",
     "NM":  "#BBBBBB",
+    #DE
+    "Union": "#2D4EA2",
+    "AfD": "#009EE0",
+    "SPD": "#E3000F",
+    "Grüne": "#1AA037",
+    "Linke": "#BE3075",
+    "BSW": "#7A0019",
+    "FDP": "#FFED00",
+    "Others": "#BBBBBB",
 }
 
 AUTO_PALETTE = [
@@ -93,6 +102,15 @@ PARTY_LABELS = {
     "AVS": "Green and Left Alliance",
     "+E":  "More Europe",
     "NM":  "Noi Moderati",
+    #DE
+    "Union": "CDU/CSU (Union)",
+    "AfD": "Alternative for Germany",
+    "SPD": "Social Democratic Party",
+    "Grüne": "The Greens",
+    "Linke": "The Left",
+    "BSW": "BSW",
+    "FDP": "Free Democratic Party",
+    "Others": "Others",
 }
 
 PARTY_LABELS_DF = pd.DataFrame(
@@ -299,8 +317,8 @@ def make_chart_with_legend(
         .transform_aggregate(country_name="max(country_name)")
         .mark_text(align="center", baseline="top", fontSize=16, fontWeight="bold")
         .encode(
-            x=alt.value(450),
-            y=alt.value(10),
+            x=alt.value(440),
+            y=alt.value(2),
             text="country_name:N",
             color=alt.value("white"),
         )
@@ -313,8 +331,8 @@ def make_chart_with_legend(
         .transform_filter(country_sel)
         .mark_text(align="center", baseline="top", fontSize=12)
         .encode(
-            x=alt.value(450),
-            y=alt.value(30),
+            x=alt.value(440),
+            y=alt.value(19),
             text="last_line:N",
             color=alt.value("#dddddd"),
         )
@@ -563,13 +581,16 @@ def make_wide_table(cells_df: pd.DataFrame, grid_df: pd.DataFrame, country_sel) 
 def main():
     uk_wide = pd.read_csv("Uk_polls_clean.csv")
     it_wide = pd.read_csv("Italy_polls_clean.csv")
+    de_wide = pd.read_csv("Germany_polls_clean.csv")
 
     UK_PARTIES = ["Lab", "Con", "Ref", "Grn", "LD", "SNP"]
-    IT_PARTIES = ["FdI", "PD", "M5S", "Lega", "FI", "A", "IV", "AVS", "+E", "NM"]  # Lead is meta
+    IT_PARTIES = ["FdI", "PD", "M5S", "Lega", "FI", "A", "IV", "AVS", "+E", "NM"]
+    DE_PARTIES = ["Union", "AfD", "SPD", "Grüne", "Linke", "BSW", "FDP", "Others"]
 
     uk_long = to_long_format(uk_wide, "United Kingdom", "826", UK_PARTIES)
     it_long = to_long_format(it_wide, "Italy", "380", IT_PARTIES)
-    df_long = pd.concat([uk_long, it_long], ignore_index=True)
+    de_long = to_long_format(de_wide, "Germany", "276", DE_PARTIES)
+    df_long = pd.concat([uk_long, it_long, de_long], ignore_index=True)
 
     # ---- Color map + map leading party ----
     all_parties = sorted(df_long["Party"].dropna().unique().tolist())
