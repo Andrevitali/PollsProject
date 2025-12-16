@@ -25,7 +25,7 @@ def data_cleaner():
                 'FI', 'A', 'IV', 'AVS','+E','NM', 'Lead']
 
     df = clean_numeric(df, Num_cols) #call the clean_numeric function
-
+    df=df.rename(columns={"A": "Az"})
     df.to_csv(CLEAN_OUTPUT, index=False)
     print(f"✅ Saved cleaned data to {CLEAN_OUTPUT}")
 

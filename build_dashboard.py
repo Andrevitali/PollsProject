@@ -46,7 +46,7 @@ KNOWN_PARTY_COLORS = {
     "M5S": "#F7D117",
     "Lega": "#00A859",
     "FI":  "#009FE3",
-    "A":   "#7F7FFF",
+    "Az":   "#7F7FFF",
     "IV":  "#F5A623",
     "AVS": "darkred",
     "+E":  "#9AD0F5",
@@ -61,18 +61,26 @@ KNOWN_PARTY_COLORS = {
     "FDP": "#FFED00",
     "Others": "#BBBBBB",
     #DK
-    "Social Democrats": "#E41E2B",
-    "Venstre (Liberal Party)": "#1E5AA8",
-    "The Moderates": "#7C3AED",
-    "Socialist People's Party": "#2E8B57",
-    "Denmark Democrats": "#7A0C2E",
-    "Liberal Alliance": "#00A3A3",
-    "Conservative People's Party": "#0B5D1E",
-    "Red–Green Alliance": "#C1121F",
-    "Social Liberal Party": "#B83280",
-    "The Alternative": "#6AB023",
-    "Danish People's Party": "#F2C300",
-    "Hard Line (Stram Kurs)": "#9A9A9A",
+    "A": "#E41E2B",
+    "V": "#1E5AA8",
+    "M": "#7C3AED",
+    "F": "#2E8B57",
+    "Æ": "#7A0C2E",
+    "I": "#00A3A3",
+    "C": "#0B5D1E",
+    "Ø": "#C1121F",
+    "B": "#B83280",
+    "Å": "#6AB023",
+    "O": "#F2C300",
+    "H": "#9A9A9A",
+    #AT
+    "FPÖ": "#0056A2",                  #  (blue)
+    "ÖVP": "#63C3D1",         #  (turquoise)
+    "SPÖ": "#E3000F",                      #  (red)
+    "NEOS": "#D40072", #  (magenta)
+    "Grüne_AT": "#2E8B57",                                  # Greens (green)
+    "KPÖ": "#C1121F",                              #  (dark red)
+    "Others": "#BBBBBB",
 }
 
 AUTO_PALETTE = [
@@ -110,7 +118,7 @@ PARTY_LABELS = {
     "M5S": "Five Star Movement",
     "Lega": "Lega",
     "FI":  "Forza Italia",
-    "A":   "Azione",
+    "Az":   "Azione",
     "IV":  "Italia Viva",
     "AVS": "Green and Left Alliance",
     "+E":  "More Europe",
@@ -124,8 +132,17 @@ PARTY_LABELS = {
     "BSW": "BSW",
     "FDP": "Free Democratic Party",
     "Others": "Others",
-}
+    #AT
+    "FPÖ": "FPÖ (Right-wing)", "ÖVP": "ÖVP (Christian Democrats)",
+                          "SPÖ": "SPÖ (Social Democrats)",
+                          "NEOS": "NEOS (Liberals)", "Grüne_AT": " Grüne (Greens)", "KPÖ": " KPÖ (Communists)","Others": "Others",
+    #DK
+    "A":" A (Social Democrats)", "V":" V (Liberals)", "M": "M (Moderates)",
+                       "F": "F (Socialists)", "Æ": " Æ (Right-wing)", "I": "I (Centre-right liberals)",
+                       "C": "Conservatives", "Ø": " Ø (Red–Greens)", "B": "B (Centre-left Liberals",
+                       "Å": "Å (Pro-European greens)", "O": "O (Right-wing)", "H": "Hard Line (Populist)"
 
+    }
 PARTY_LABELS_DF = pd.DataFrame(
     {"Party": list(PARTY_LABELS.keys()), "Party_full": list(PARTY_LABELS.values())}
 )
@@ -175,12 +192,22 @@ def to_long_format(df_wide: pd.DataFrame, country_name: str, id_str: str, party_
 # -------------------------------------------------------------------
 # Map leading party (last 10 polls, mean)
 # -------------------------------------------------------------------
-def compute_leading_by_country_long(df_long: pd.DataFrame, color_map: dict[str, str]) -> pd.DataFrame:
-    d = df_long.sort_values("Date_conducted")
-    last10 = d.groupby("id_str", group_keys=False).tail(10)
+def compute_leading_by_country_long(df_long: pd.DataFrame, color_map: dict[str, str], n_polls: int = 10) -> pd.DataFrame:
+    d = df_long.copy()
+
+    # get last N poll_ids per country based on Date_conducted
+    last_polls = (
+        d[["id_str", "poll_id", "Date_conducted"]]
+        .drop_duplicates()
+        .sort_values(["id_str", "Date_conducted"])
+        .groupby("id_str", group_keys=False)
+        .tail(n_polls)
+    )
+
+    lastN = d.merge(last_polls[["id_str", "poll_id"]], on=["id_str", "poll_id"], how="inner")
 
     avg = (
-        last10.groupby(["id_str", "Party"], as_index=False)["Value"]
+        lastN.groupby(["id_str", "Party"], as_index=False)["Value"]
         .mean()
         .rename(columns={"Value": "avg_value"})
     )
@@ -192,6 +219,8 @@ def compute_leading_by_country_long(df_long: pd.DataFrame, color_map: dict[str, 
     lead = lead.merge(names, on="id_str", how="left")
     lead["leading_color"] = lead["leading_party"].map(color_map)
     return lead
+
+
 
 # -------------------------------------------------------------------
 # Map
@@ -381,7 +410,7 @@ def make_chart_with_legend(
     # a bit wider to fit full names
     legend_chart = (legend_swatch + legend_text).properties(width=260, height=150, title="Party:")
 
-    return alt.hconcat((main_chart + country_label + last_poll_label), legend_chart, spacing=10)
+    return alt.hconcat((main_chart + country_label + last_poll_label), legend_chart, spacing=5)
 
 # -------------------------------------------------------------------
 # Table (Date | parties | Lead | Pollster | Sample) + highlight winner cell
@@ -596,29 +625,30 @@ def main():
     it_wide = pd.read_csv("Italy_polls_clean.csv")
     de_wide = pd.read_csv("Germany_polls_clean.csv")
     dk_wide = pd.read_csv("Denmark_polls_clean.csv")
+    at_wide = pd.read_csv("Austria_polls_clean.csv")
 
     UK_PARTIES = ["Lab", "Con", "Ref", "Grn", "LD", "SNP"]
-    IT_PARTIES = ["FdI", "PD", "M5S", "Lega", "FI", "A", "IV", "AVS", "+E", "NM"]
+    IT_PARTIES = ["FdI", "PD", "M5S", "Lega", "FI", "Az", "IV", "AVS", "+E", "NM"]
     DE_PARTIES = ["Union", "AfD", "SPD", "Grüne", "Linke", "BSW", "FDP", "Others"]
-    DK_PARTIES =[
-    "Social Democrats",
-    "Venstre (Liberal Party)",
-    "The Moderates",
-    "Socialist People's Party",
-    "Denmark Democrats",
-    "Liberal Alliance",
-    "Conservative People's Party",
-    "Red–Green Alliance",
-    "Social Liberal Party",
-    "The Alternative",
-    "Danish People's Party",
-    "Hard Line (Stram Kurs)"]
+    DK_PARTIES =["A", "V", "M",
+                       "F", "Æ", "I",
+                       "C", "Ø", "B",
+                       "Å", "O", "H"]
+
+    AT_PARTIES = ["FPÖ",
+    "ÖVP",
+    "SPÖ",
+    "NEOS",
+    "Grüne_AT",
+    "KPÖ",
+    "Others"]
 
     uk_long = to_long_format(uk_wide, "United Kingdom", "826", UK_PARTIES)
     it_long = to_long_format(it_wide, "Italy", "380", IT_PARTIES)
     de_long = to_long_format(de_wide, "Germany", "276", DE_PARTIES)
     dk_long = to_long_format(dk_wide, "Denmark", "208", DK_PARTIES)
-    df_long = pd.concat([uk_long, it_long, de_long, dk_long], ignore_index=True)
+    at_long = to_long_format(at_wide, "Austria", "40", AT_PARTIES)
+    df_long = pd.concat([uk_long, it_long, de_long, dk_long,at_long], ignore_index=True)
 
     # ---- Color map + map leading party ----
     all_parties = sorted(df_long["Party"].dropna().unique().tolist())
@@ -667,6 +697,7 @@ def main():
     out_path = os.path.join("dashboard", "index.html")
     combined.save(out_path)
     print(f"✅ Dashboard saved to {out_path}")
+    print(lead_df[lead_df["country_name"] == "Denmark"])
 
 if __name__ == "__main__":
     main()

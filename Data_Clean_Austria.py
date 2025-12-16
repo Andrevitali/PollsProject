@@ -1,8 +1,8 @@
 import pandas as pd
 import re
 
-RAW_INPUT = "Denmark_national_polls_last5years_bs4.csv"     # from scraper
-CLEAN_OUTPUT = "Denmark_polls_clean.csv"                    # used by dashboard
+RAW_INPUT = "Austria_national_polls_last5years_bs4.csv"     # from scraper
+CLEAN_OUTPUT = "Austria_polls_clean.csv"                    # used by dashboard
 
 def clean_numeric(df, Num_cols):
     # ✅ only keep numeric cols that actually exist (prevents KeyError)
@@ -11,7 +11,7 @@ def clean_numeric(df, Num_cols):
     df[Num_cols] = (
         df[Num_cols]
         .astype(str)
-        .replace({",": "", "%": "", "–": "", "−": ""}, regex=True)
+        .replace({",": "", "%": "", "–": "", "−": "",r"\?": ""}, regex=True)
         .apply(lambda col: col.str.strip())
         .apply(pd.to_numeric, errors="coerce")
         .astype("Float64")
@@ -30,10 +30,10 @@ def clean_numeric(df, Num_cols):
 def data_cleaner():
     df = pd.read_csv(RAW_INPUT)
 
-    df = df.drop(columns=["Gov.","Opp.","Red","Blue"], axis=1, errors="ignore")
 
     # ✅ safer split (treat [ as literal)
-    df["Pollster"] = df["Polling firm"].astype(str).str.split(r"\[").str[0].str.strip()
+    df["Pollster"] = df["Polling firm"].astype(str).str.split("(", n=1).str[0].str.strip()
+
 
     # ✅ ROBUST: extract a "dd Mon" from Fieldwork date (works for ranges like "9–11 Dec")
     # We take the LAST match (end of fieldwork range is usually the right “conducted date”)
@@ -54,14 +54,15 @@ def data_cleaner():
 
     df.rename(columns={"Date(s) conducted": "Date_conducted", "Sample size": "Sample_size"}, inplace=True)
 
-    df = df.drop(columns=["Year","Polling firm","Fieldwork date"], errors="ignore")
-    df = df.dropna(subset=["Date_conducted"])
+    df = df.drop(columns=["Year","Polling firm","Fieldwork date","Method"], errors="ignore")
 
-    Num_cols = ['Sample_size', 'A', 'V', 'M', 'F',
-                'Æ', 'I', 'C', 'Ø', 'B', 'H', 'Å', 'O', 'Others']
+
+    Num_cols = ['Sample_size', 'FPÖ', 'ÖVP', 'SPÖ', 'NEOS',
+                'Grüne', 'KPÖ', 'Others']
 
     df = clean_numeric(df, Num_cols)
-    df=df.drop(columns="Others")
+    df=df.rename(columns={"Grüne": "Grüne_AT"})
+    df = df[df["Sample_size"].notna()]
     df.to_csv(CLEAN_OUTPUT, index=False)
     print(f"✅ Saved cleaned data to {CLEAN_OUTPUT}")
 
