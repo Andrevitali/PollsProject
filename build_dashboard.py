@@ -324,8 +324,22 @@ def make_chart_with_legend(
     )
 
     lines = (
-        base
+        alt.Chart(df_long)
+        .transform_filter("length(data('country_sel_store')) > 0")
+        .transform_filter(country_sel)
+
+        # LOESS first (keeps Party)
         .transform_loess("Date_conducted", "Value", groupby=["Party"])
+
+        # then add full names back for tooltips
+        .transform_lookup(
+            lookup="Party",
+            from_=alt.LookupData(PARTY_LABELS_DF, "Party", ["Party_full"])
+        )
+        .transform_calculate(
+            Party_full="isValid(datum.Party_full) ? datum.Party_full : datum.Party"
+        )
+
         .mark_line(size=3.5)
         .encode(
             x=alt.X("Date_conducted:T", title="Date Conducted"),
