@@ -1,4 +1,6 @@
 Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
+2026-03-02,YouGov,2073,16,16,23,14,21,3,1,5,2
+2026-03-02,More in Common,2010,18,19,29,14,14,3,1,3,10
 2026-02-27,Opinium,2050,18,18,30,12,13,3,0,6,12
 2026-02-25,Find Out Now,2442,15,18,26,12,18,3,1,7,8
 2026-02-23,YouGov,2325,18,18,24,14,17,3,1,4,6
@@ -16,7 +18,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2026-02-04,Find Out Now,2264,16,18,31,11,18,2,1,3,13
 2026-02-02,YouGov,2330,19,18,26,14,17,3,2,2,7
 2025-02-02,More in Common,2005,21,20,30,14,10,3,1,2,9
-2026-02-01,Freshwater Strategy,1250,17,22,30,14,14,2,,1,8
 2026-01-29,BMG Research,1513,20,17,32,11,13,3,1,3,12
 2026-01-28,Find Out Now,1799,17,17,29,11,19,3,1,3,10
 2026-01-27,Ipsos,1104,22,19,30,12,12,2,2,1,8
@@ -31,7 +32,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2026-01-14,Find Out Now,1592,15,19,28,12,18,3,1,3,9
 2025-01-13,More in Common,2036,19,21,31,12,12,2,1,2,10
 2026-01-12,YouGov,2259,19,20,24,16,14,4,1,2,4
-2026-01-11,Freshwater Strategy,1250,19,19,33,11,12,2,,3,14
 2026-01-09,Opinium,2050,20,18,31,12,13,2,1,3,11
 2026-01-09,YouGov,17230,18,19,26,14,15,3,1,2,7
 2026-01-08,Find Out Now,2422,15,18,32,12,17,3,1,2,14
@@ -57,7 +57,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-12-01,YouGov,2366,19,19,26,14,16,3,1,2,7
 2025-12-01,JL Partners,1537,22,20,29,11,10,3,1,4,7
 2025-12-01,More in Common,2114,21,21,30,13,11,2,1,1,9
-2025-11-30,Freshwater Strategy,1558,19,20,31,15,12,2,,2,11
 2025-11-28,Focaldata,1343,20,18,29,13,12,3,1,3,9
 2025-11-28,Opinium,2050,21,17,31,11,13,3,1,3,10
 2025-11-27,BMG Research,1548,22,20,30,12,12,2,1,2,8
@@ -73,7 +72,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-11-12,Find Out Now,2011,15,16,33,11,17,3,2,3,16
 2025-11-10,YouGov,2366,19,18,26,14,15,3,2,3,7
 2025-11-10,More in Common,2011,20,19,31,14,12,2,1,3,11
-2025-11-09,Freshwater Strategy,1250,17,19,32,13,13,3,,3,13
 2025-11-07,Opinium,2050,20,17,33,12,11,3,1,3,13
 2025-11-06,Find Out Now,2717,15,16,33,11,18,3,1,3,15
 2025-11-05,Ipsos,1148,18,16,33,12,15,4,1,1,15
@@ -96,7 +94,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-10-08,Find Out Now,2668,17,17,32,12,15,3,1,4,15
 2025-10-06,YouGov,2333,20,17,27,17,12,4,1,3,7
 2025-10-06,More in Common,2003,20,19,33,14,8,3,1,3,13
-2025-10-05,Freshwater Strategy,1251,20,18,35,14,8,3,,2,15
 2025-10-03,Opinium,2050,21,16,34,12,10,2,1,4,13
 2025-10-03,JL Partners,6083,21,19,31,13,8,3,1,4,10
 2025-10-01,Find Out Now,2611,19,14,35,12,11,3,1,4,16
@@ -122,7 +119,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-09-03,Find Out Now,2576,19,17,32,13,11,2,1,5,13
 2025-09-01,YouGov,2523,20,17,29,15,10,3,1,5,9
 2025-09-01,More in Common,2042,21,18,31,13,8,3,1,6,10
-2025-08-31,Freshwater Strategy,1251,20,17,33,15,7,3,,4,13
 2025-08-31,JL Partners,2118,22,18,32,12,7,2,1,6,10
 2025-08-28,BMG Research,1504,20,17,35,13,7,2,1,4,15
 2025-08-27,Find Out Now,2538,18,15,34,13,10,2,1,6,16
@@ -141,7 +137,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-08-06,Find Out Now,2627,20,16,32,12,9,2,1,7,12
 2025-08-04,YouGov,2472,21,17,27,15,11,3,1,4,6
 2025-08-03,More in Common,2042,22,18,31,14,7,3,1,4,9
-2025-08-03,Freshwater Strategy,1259,22,18,33,14,6,3,,3,11
 2025-08-03,Stack Data Strategy (MRP),9301,25,16,30,12,9,3,1,,5
 2025-07-31,BMG Research,1528,23,18,32,13,8,2,1,3,9
 2025-07-30,Find Out Now,2654,20,17,30,13,9,2,1,7,10
@@ -162,7 +157,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-07-07,YouGov,2513,24,16,26,15,11,3,1,3,2
 2025-07-07,More in Common,2084,24,19,29,14,7,3,1,3,5
 2025-07-07,More in Common,2084,25,20,28,14,7,3,1,3,3
-2025-07-06,Freshwater Strategy,1259,23,19,31,16,6,3,,2,8
 2025-07-02,Find Out Now,2604,22,16,30,15,11,3,1,3,8
 2025-06-30,YouGov,2392,24,17,26,16,10,3,1,2,2
 2025-06-30,More in Common,2532,24,19,29,12,9,3,1,3,5
@@ -183,7 +177,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-06-11,Find Out Now,2651,24,16,30,13,11,3,1,2,6
 2025-06-09,YouGov,2196,23,17,29,15,10,3,2,1,6
 2025-06-09,More in Common,2073,24,20,28,14,7,3,1,3,4
-2025-06-08,Freshwater Strategy,1260,21,21,32,14,8,2,,2,11
 2025-06-04,Find Out Now,1962,22,16,31,15,11,3,1,2,9
 2025-06-04,Ipsos,1180,25,15,34,11,9,4,1,1,9
 2025-06-02,YouGov,2240,22,18,28,17,9,3,1,2,6
@@ -201,7 +194,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-05-14,Find Out Now,2557,21,16,33,14,11,3,1,2,12
 2025-05-12,YouGov,2310,23,18,28,16,9,3,1,3,5
 2025-05-12,More in Common,2094,25,20,28,14,8,2,1,1,3
-2025-05-11,Freshwater Strategy,1250,22,19,32,15,8,3,,2,10
 2025-05-08,BMG Research,1525,22,19,32,13,9,3,0,2,10
 2025-05-07,Find Out Now,2210,20,16,33,15,11,3,1,1,13
 2025-05-06,YouGov,2187,22,17,29,16,10,3,1,1,7
@@ -224,7 +216,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-04-09,Find Out Now,2546,22,21,26,14,11,3,1,3,4
 2025-04-07,YouGov,2402,24,22,23,17,9,3,1,2,1
 2025-04-07,More in Common,2058,24,23,24,17,7,2,0,1,
-2025-04-06,Freshwater Strategy,1250,22,27,28,14,5,2,,3,1
 2025-04-02,Find Out Now,2768,22,20,28,13,11,3,1,3,6
 2025-04-01,More in Common (MRP),16176,25,24,24,13,8,2,1,4,1
 2025-03-31,YouGov,2392,24,21,23,14,11,3,1,3,1
@@ -248,7 +239,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-03-07,Opinium,1498,28,20,27,12,8,3,1,2,1
 2025-03-05,Find Out Now,2670,25,21,26,12,10,3,1,2,1
 2025-03-03,YouGov,2222,26,21,25,14,9,3,1,2,1
-2025-03-02,Freshwater Strategy,1215,24,23,27,15,7,3,,2,3
 2025-03-02,More in Common,2010,26,24,24,13,7,2,1,2,2
 2025-02-28,Focaldata,1008,24,22,21,14,8,3,1,5,2
 2025-02-26,Find Out Now,3363,23,21,28,13,10,3,1,1,5
@@ -267,7 +257,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-02-05,Find Out Now,2487,25,18,29,13,10,3,1,2,4
 2025-02-03,YouGov,2465,24,21,25,14,9,3,1,2,1
 2025-02-03,More in Common,2044,24,26,24,13,6,3,1,3,2
-2025-02-02,Freshwater Strategy,1200,29,28,22,9,7,3,,2,1
 2025-01-29,Find Out Now,2487,23,21,27,11,10,3,1,3,4
 2025-01-29,BMG Research,1514,25,25,24,14,8,3,1,1,
 2025-01-27,YouGov,2523,27,22,23,14,9,3,1,2,4
@@ -287,7 +276,6 @@ Date_conducted,Pollster,Sample_size,Lab,Con,Ref,LD,Grn,SNP,PC,Others,Lead
 2025-01-10,Opinium,2050,29,23,24,10,9,2,1,2,5
 2025-01-08,Find Out Now,2076,25,20,25,11,11,3,1,2,
 2025-01-08,More in Common,2011,26,26,22,12,7,3,1,2,
-2025-01-06,Freshwater Strategy,1207,28,29,23,12,5,3,,1,1
 2025-01-03,Deltapoll,1532,30,23,22,12,9,3,1,1,7
 2024-12-23,Deltapoll,1552,29,25,21,12,8,4,0,1,4
 2024-12-20,Opinium,1472,29,23,22,11,10,3,1,2,6
